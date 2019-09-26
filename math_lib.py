@@ -1,3 +1,5 @@
+import sys
+
 
 def list_mean(L):
     if L is None:
@@ -5,7 +7,18 @@ def list_mean(L):
     if len(L) == 0:
         return None
 
-    avg = sum(L) / len(L)
+    s = 0
+
+    for i in L:
+        if(((isinstance(i, int)) or (isinstance(i, float))) is False):
+            raise Exception("Vals in list != ints or floats")
+            sys.exit(1)
+
+    try:
+        avg = sum(L) / len(L)
+    except Exception:
+        print("Something went wrong with computation of mean")
+        sys.exit(1)
 
     return(avg)
 
