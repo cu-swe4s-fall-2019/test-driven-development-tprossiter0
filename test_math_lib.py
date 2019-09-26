@@ -41,6 +41,16 @@ class TestMathLib(unittest.TestCase):
             ret = math_lib.list_mean(clist)
             self.assertAlmostEqual(ret, stat.mean(clist))
 
+    def test_list_mean_parameters(self):
+        for i in range(1, 100):
+            stringlist = ["B", 	"x"]
+            for j in range(1, 100):
+                stringlist.append(random.randint(1, 100))
+            if(i % 2 == 0):
+                stringlist.append(False)
+            with self.assertRaises(Exception) as ex:
+                math_lib.list_mean(stringlist)
+
 
 if __name__ == '__main__':
     unittest.main()
