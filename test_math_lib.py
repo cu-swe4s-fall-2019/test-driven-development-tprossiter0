@@ -70,6 +70,16 @@ class TestMathLib(unittest.TestCase):
             ret = math_lib.list_stdev(clist)
             self.assertAlmostEqual(ret, stat.stdev(clist))
 
+    def test_list_stdev_parameters(self):
+    	for i in range(1, 100):
+            stringlist = ["B", "x"]
+            for j in range(1, 100):
+                stringlist.append(random.randint(1, 100))
+            if(i % 2 == 0):
+                stringlist.append(False)
+            with self.assertRaises(Exception) as ex:
+                math_lib.list_stdev(stringlist)
+
 
 if __name__ == '__main__':
     unittest.main()
