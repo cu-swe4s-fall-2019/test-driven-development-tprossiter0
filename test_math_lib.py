@@ -56,8 +56,19 @@ class TestMathLib(unittest.TestCase):
         self.assertEqual(ret, None)
 
     def test_list_stdev_empty(self):
-    	ret = math_lib.list_stedv([])
-    	self.assertEqual(ret, None)
+        ret = math_lib.list_stdev([])
+        self.assertEqual(ret, None)
+
+    def test_list_stdev_rand_ints_floats(self):
+        for i in range(1, 100):
+            clist = []
+            for j in range(1, 100):
+                if(j % 2 == 0):
+                    clist.append(random.randint(-50, 50))
+                else:
+                    clist.append(random.uniform(-50, 50))
+            ret = math_lib.list_stdev(clist)
+            self.assertAlmostEqual(ret, stat.stdev(clist))
 
 
 if __name__ == '__main__':
