@@ -43,13 +43,17 @@ class TestMathLib(unittest.TestCase):
 
     def test_list_mean_parameters(self):
         for i in range(1, 100):
-            stringlist = ["B", 	"x"]
+            stringlist = ["B", "x"]
             for j in range(1, 100):
                 stringlist.append(random.randint(1, 100))
             if(i % 2 == 0):
                 stringlist.append(False)
             with self.assertRaises(Exception) as ex:
                 math_lib.list_mean(stringlist)
+
+    def test_list_stdev_none(self):
+        ret = math_lib.list_stdev(None)
+        self.assertEqual(ret, None)
 
 
 if __name__ == '__main__':
