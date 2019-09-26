@@ -30,6 +30,17 @@ class TestMathLib(unittest.TestCase):
             ret = math_lib.list_mean(flist)
             self.assertAlmostEqual(ret, stat.mean(flist))
 
+    def test_list_mean_combo(self):
+        for i in range(1, 100):
+            clist = []
+            for j in range(1, 20):
+                if(j % 2 == 0):
+                    clist.append(random.randint(1, 100))
+                else:
+                    clist.append(random.uniform(1, 100))
+            ret = math_lib.list_mean(clist)
+            self.assertAlmostEqual(ret, stat.mean(clist))
+
 
 if __name__ == '__main__':
     unittest.main()
