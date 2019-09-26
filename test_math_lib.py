@@ -15,9 +15,20 @@ class TestMathLib(unittest.TestCase):
         self.assertEqual(ret, None)
 
     def test_list_mean_ints(self):
-        intlist = [1, 2, 3, 4, 5, 6, -1, -5, -50]
-        ret = math_lib.list_mean(intlist)
-        self.assertEqual(ret, stat.mean(intlist))
+        for i in range(1, 100):
+            intlist = []
+            for j in range(1, 10):
+                intlist.append(random.randint(-50, 50))
+            ret = math_lib.list_mean(intlist)
+            self.assertEqual(ret, stat.mean(intlist))
+
+    def test_list_mean_floats(self):
+        for i in range(1, 100):
+            flist = []
+            for j in range(1, 20):
+                flist.append(random.uniform(1, 100))
+            ret = math_lib.list_mean(flist)
+            self.assertAlmostEqual(ret, stat.mean(flist))
 
 
 if __name__ == '__main__':
