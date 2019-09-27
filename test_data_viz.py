@@ -56,6 +56,5 @@ class TestFileInputs(unittest.TestCase):
         self.assertEqual(output, "file name must be alphanumeric(string)")
 
 
-
 if __name__ == '__main__':
     unittest.main()
