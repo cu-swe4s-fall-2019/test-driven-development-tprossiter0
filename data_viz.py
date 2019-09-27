@@ -21,6 +21,8 @@ def boxplot(L, out_file_name):
 
     if path.exists(out_file_name):
         raise Exception("error, file already exists")
+    if (isinstance(out_file_name, str) is False):
+        raise Exception("file name must be alphanumeric(string)")
     pass
 
 
@@ -40,6 +42,8 @@ def histogram(L, out_file_name):
     """
     if path.exists(out_file_name):
         raise Exception("error, file already exists")
+    if (isinstance(out_file_name, str) is False):
+        raise Exception("file name must be alphanumeric(string)")
     pass
 
 
@@ -60,4 +64,6 @@ def combo(L, out_file_name):
     """
     if path.exists(out_file_name):
         raise Exception("error, file already exists")
+    if (isinstance(out_file_name, str) is False):
+        raise Exception("file name must be alphanumeric(string)")
     pass
