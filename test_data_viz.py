@@ -37,6 +37,25 @@ class TestFileInputs(unittest.TestCase):
         output = str(ex.exception)
         self.assertEqual(output, "error, file already exists")
 
+    def test_boxplot_correct_filename_input(self):
+        with self.assertRaises(Exception) as ex:
+            data_viz.boxplot([], 123)
+        output = str(ex.exception)
+        self.assertEqual(output, "file name must be alphanumeric(string)")
+
+    def test_histogram_correct_filename_input(self):
+        with self.assertRaises(Exception) as ex:
+            data_viz.histogram([], 123)
+        output = str(ex.exception)
+        self.assertEqual(output, "file name must be alphanumeric(string)")
+
+    def test_combo_correct_filename_input(self):
+        with self.assertRaises(Exception) as ex:
+            data_viz.combo([], 123)
+        output = str(ex.exception)
+        self.assertEqual(output, "file name must be alphanumeric(string)")
+
+
 
 if __name__ == '__main__':
     unittest.main()
