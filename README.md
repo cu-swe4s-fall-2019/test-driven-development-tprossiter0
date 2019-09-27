@@ -1,4 +1,5 @@
-# best-practices
+#Test Driven Development
+
 ## Purpose
 This repository contains several modules that allow:
 - computation of the arithemetic mean and standard deviation of a column from stdin
@@ -25,7 +26,7 @@ which executes all of these with the corresponding input from a user
 
 - viz.py
 	Writes a data plot, mean, and stdev to an output file given the following informaton/arguments:
-	
+
  Script that takes in 3 required arguments into argparse:
  	--plot_type : plot type (boxplot, histogram, combo ( <- both hist and boxplot ))
  	--out_file_name : name of output file to be created in which the specified plot will be saved 
